@@ -1,4 +1,4 @@
-class MeetupV3
+class MeetupClient
   def initialize(access_token:)
     @access_token = access_token
   end
