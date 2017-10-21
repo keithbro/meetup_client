@@ -7,7 +7,7 @@ class MeetupClient
     get('/self/events', params).map do |event|
       parsed = {
         group: OpenStruct.new(event["group"]),
-        time: Time.at(event["time"] / 1000),
+        time: Time.at(event["time"] / 1000).getlocal(event["utc_offset"] / 1000),
         venue: OpenStruct.new(event["venue"]),
       }
 
